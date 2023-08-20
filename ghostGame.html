@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <img src="CREEPYGHOST.png" alt="" id="ghost" />
+
+    <div class="buttons">
+      <button
+        onmousedown="startContinuousMovement(moveLeft)"
+        onmouseup="stopContinuousMovement()"
+        class="left"
+      >
+        LEFT
+      </button>
+      <button
+        onmousedown="startContinuousMovement(moveRight)"
+        onmouseup="stopContinuousMovement()"
+        class="right"
+      >
+        RIGHT
+      </button>
+      <button
+        onmousedown="startContinuousMovement(moveUp)"
+        onmouseup="stopContinuousMovement()"
+        class="up"
+      >
+        UP
+      </button>
+      <button
+        onmousedown="startContinuousMovement(moveDown)"
+        onmouseup="stopContinuousMovement()"
+        class="down"
+      >
+        DOWN
+      </button>
+    </div>
+    <script src="./ghostGame.js"></script>
+  </body>
+</html>
