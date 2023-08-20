@@ -1,0 +1,17 @@
+#ghost {
+    position:relative;
+    transition: 300ms linear; 
+}
+
+.buttons {
+    position: absolute;
+    z-index: 20;
+}
+
+
+body {
+    background-color:lightblue;
+    background-image: url("https://cdn3.vectorstock.com/i/1000x1000/80/67/halloween-pumpkins-seamless-background-vector-2808067.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+} 

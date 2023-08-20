@@ -1,58 +1,74 @@
+const ghost = document.querySelector('#ghost')
+const coordinates = document.querySelector('#coordinates')
 
-const ghost = document.querySelector("#ghost");
-let currentGhost = 20;
+let currentX = 20
+let currentY = 20
 
-function moveGhostLeft(){
+coordinates.textContent = `${currentX} ${currentY}`
 
-    ghost.style.position = "relative";
-    currentGhost += 20;
-    ghost.style.right = `${currentGhost}px`;
-    
+function moveGhostLeft() {
+  currentX += 20
+  ghost.style.right = `${currentX}px`
+  coordinates.textContent = `${currentX} ${currentY}`
 }
-function moveGhostRight(){
-
-    ghost.style.position = "relative";
-    currentGhost -= 20;
-    ghost.style.right = `${currentGhost}px`;
-    
+function moveGhostRight() {
+  currentX -= 20
+  ghost.style.right = `${currentX}px`
+  coordinates.textContent = `${currentX} ${currentY}`
 }
 function moveGhostUp() {
-    ghost.style.position = "relative"; 
-    currentGhost -= 20;
-    ghost.style.top = `${currentGhost}px`;
+  currentY -= 20
+  ghost.style.top = `${currentY}px`
+  coordinates.textContent = `${currentX} ${currentY}`
 }
 
 function moveGhostDown() {
-    ghost.style.position = "relative"; 
-    currentGhost += 20;
-    ghost.style.top = `${currentGhost}px`;
-}
-
-
-function moveLeft(){
-    moveGhostLeft();
-}
-
-function moveRight(){
-    moveGhostRight();
-}
-
-
-function moveUp(){
-    moveGhostUp();
-}
-
-
-function moveDown(){
-    moveGhostDown();
+  currentY += 20
+  ghost.style.top = `${currentY}px`
+  coordinates.textContent = `${currentX} ${currentY}`
 }
 
 function startContinuousMovement(moveFunction) {
-    moveInterval = setInterval(moveFunction, 100);
+  moveInterval = setInterval(moveFunction, 100)
 }
 
 function stopContinuousMovement() {
-    clearInterval(moveInterval);
+  clearInterval(moveInterval)
 }
 
-   
+// Add event listener on keydown
+document.addEventListener(
+  'keydown',
+  (event) => {
+    var name = event.key
+    var code = event.code
+
+    switch (name) {
+      case 'ArrowLeft':
+        moveGhostLeft()
+        break
+
+      case 'ArrowRight':
+        moveGhostRight()
+        break
+
+      case 'ArrowDown':
+        moveGhostDown()
+        break
+
+      case 'ArrowUp':
+        moveGhostUp()
+        break
+
+      default:
+        break
+    }
+
+    if (code === 'Space') {
+      alert('boooo')
+    }
+    // Alert the key name and key code on keydown
+    console.log(`Key pressed ${name} \r\n Key code value: ${code}`)
+  },
+  false,
+)

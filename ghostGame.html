@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="ghostGame.css" />
+  </head>
+
   <body>
     <img src="CREEPYGHOST.png" alt="" id="ghost" />
 
     <div class="buttons">
       <button
-        onmousedown="startContinuousMovement(moveLeft)"
+        onmousedown="startContinuousMovement(moveGhostLeft)"
         onmouseup="stopContinuousMovement()"
         class="left"
       >
         LEFT
       </button>
       <button
-        onmousedown="startContinuousMovement(moveRight)"
+        onmousedown="startContinuousMovement(moveGhostRight)"
         onmouseup="stopContinuousMovement()"
         class="right"
       >
         RIGHT
       </button>
       <button
-        onmousedown="startContinuousMovement(moveUp)"
+        onmousedown="startContinuousMovement(moveGhostUp)"
         onmouseup="stopContinuousMovement()"
         class="up"
       >
         UP
       </button>
       <button
-        onmousedown="startContinuousMovement(moveDown)"
+        onmousedown="startContinuousMovement(moveGhostDown)"
         onmouseup="stopContinuousMovement()"
         class="down"
       >
         DOWN
       </button>
+
+      <p id="coordinates"></p>
     </div>
     <script src="./ghostGame.js"></script>
   </body>
